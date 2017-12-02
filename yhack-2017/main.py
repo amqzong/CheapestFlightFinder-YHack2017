@@ -17,6 +17,7 @@
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
+app.config["DEBUG"] = True
 
 @app.route('/form')
 def form():
@@ -28,7 +29,7 @@ def submitted_form():
     email = request.form['email']
     site = request.form['site_url']
     comments = request.form['comments']
-    
+
     return render_template(
     'submitted_form.html',
     name=name,
