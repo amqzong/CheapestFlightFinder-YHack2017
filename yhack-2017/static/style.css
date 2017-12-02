@@ -1,3 +1,29 @@
+body {
+  background-color: aliceblue;
+}
+
+h1 {
+  text-align: center;
+  background-color: white;
+  padding: 16px;
+  margin: 16px;
+  border: 16px;
+  border-radius: 16px;
+}
 .pagetitle {
-    color: #800080;
+    color: black;
+}
+
+table {
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 70%;
+}
+
+.buttonHolder {
+  text-align: center;
+}
+
+.submit {
+  font-size: xx-large;
 }
