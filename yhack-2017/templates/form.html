@@ -1,10 +1,8 @@
 <html>
-
   <head>
     <title>Submit a form</title>
-    <link rel="stylesheet" type="text/css" href="../static/style.css">
+   <link rel="stylesheet" type="text/css" href="/static/style.css">
   </head>
-
   <body>
     <div id="container">
       <div class="pagetitle">
@@ -12,24 +10,21 @@
       </div>
       <div id="main">
         <form method="post" action="{{ url_for('submitted_form') }}">
-          <table>
-            <tr>
-              <th><label for="university">University</label></th>
-              <th><label for="departure">Departure</label></th>
-              <th><label for="destination">Destination</label></th>
-            </tr>
-            <tr>
-              <th><input type="text" name="university"><br /></th>
-              <th><input type="departure" name="departure"><br /></th>
-              <th><input type="destination" name="destination"><br /></th>
-              </table>
-            </tr>
-              <div class="buttonHolder">
-                <input class="submit" type="submit">
-              </div>
+          <label for="university">University:</label>
+          <input type="text" name="university"><br />
+          <label for="departure">Departure:</label>
+          <input type="text" name="departure"><br />
+          <label for="destination">Destination:</label>
+          <input type="text" name="destination"><br />
+          <label for="year">Year:</label>
+          <input type="text" name="year"><br />
+          <label for="month">Month:</label>
+          <input type="text" name="month"><br />
+          <label for="day">Day:</label>
+          <input type="text" name="day">
+          <input type="submit">
         </form>
       </div>
     </div>
   </body>
-
 </html>

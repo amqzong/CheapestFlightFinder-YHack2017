@@ -15,8 +15,9 @@
 # limitations under the License.
 #
 from flask import Flask, render_template, request
-
 app = Flask(__name__)
+
+import csv
 
 @app.route('/form')
 def form():
@@ -27,11 +28,45 @@ def submitted_form():
     university = request.form['university']
     departure = request.form['departure']
     destination = request.form['destination']
-    comments = request.form['comments']
+    year = request.form['year']
+    month = request.form['month']
+    day = request.form['day']
+
+
+    with open('Deals.csv') as csvDeals:
+        deals = csv.reader(csvDeals, delimiter=',')
+        dealsAv = []
+        for row in deals:
+            flightDate = row[3]
+            flightYear = flightDate[0:4]
+            flightMonth = flightDate[5:7]
+            flightDay = flightDate[8:10]
+
+            if (row[1] == departure and row[2] == destination and flightYear == year
+                and flightMonth == month and flightDay == day):
+                dealsAv.append(row)
+
+    with open('LowestFares.csv') as csvLowestFares:
+        lowestFares = csv.reader(csvLowestFares, delimiter=',')
+        lowestFaresAv = []
+        for row in lowestFares:
+            flightDate = row[2]
+            flightYear = flightDate[6:10]
+            flightMonth = flightDate[0:2]
+            flightDay = flightDate[3:5]
+
+            if (row[0] == departure and row[1] == destination and flightYear == year
+                and flightMonth == month and flightDay == day):
+                lowestFaresAv.append(row)
+    
     
     return render_template(
     'submitted_form.html',
     university=university,
     departure=departure,
     destination=destination,
-    comments=comments)
+    year=year,
+    month=month,
+    day=day,
+    dealsAv=dealsAv,
+    lowestFaresAv=lowestFaresAv)
