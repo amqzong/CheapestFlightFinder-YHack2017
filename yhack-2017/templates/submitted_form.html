@@ -21,6 +21,49 @@
           <strong>Deals Available</strong>: {{dealsAv}} <br>
           <strong>Lowest Fares Available</strong>: {{lowestFaresAv}}
        </p>
+
+      <table>
+        <thead>
+          <tr>Flight Number</tr>
+          <tr>Departure</tr>
+          <tr>Destination</tr>
+          <tr>Flight Date/Time</tr>
+          <tr>Flight Type</tr>
+          <tr>Fare Type</tr>
+          <tr>Dollar Fare</tr>
+        </thead>
+        <tbody>
+       {% for deal in dealsAv %}
+       <tr>
+        {% for item in deal %}
+          <td> {{ item }} </td>
+        {% endfor %}
+      </tr>
+       {% endfor %}
+       </tbody>
+     </table>
+
+     <br>
+
+       <table>
+        <thead>
+          <tr>Departure</tr>
+          <tr>Destination</tr>
+          <tr>Flight Date/Time</tr>
+          <tr>Flight Type</tr>
+          <tr>Fare Type</tr>
+          <tr>Final Price</tr>
+        </thead>
+        <tbody>
+       {% for fare in lowestFaresAv %}
+       <tr>
+        {% for item in fare %}
+          <td> {{ item }} </td>
+        {% endfor %}
+      </tr>
+       {% endfor %}
+       </tbody>
+     </table>
      </div>
    </div>
  </body>

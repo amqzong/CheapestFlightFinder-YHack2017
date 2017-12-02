@@ -42,9 +42,10 @@ def submitted_form():
             flightMonth = flightDate[5:7]
             flightDay = flightDate[8:10]
 
+
             if (row[1] == departure and row[2] == destination and flightYear == year
                 and flightMonth == month and flightDay == day):
-                dealsAv.append(row)
+                dealsAv.append(row[0:7])
 
     with open('LowestFares.csv') as csvLowestFares:
         lowestFares = csv.reader(csvLowestFares, delimiter=',')
@@ -57,7 +58,7 @@ def submitted_form():
 
             if (row[0] == departure and row[1] == destination and flightYear == year
                 and flightMonth == month and flightDay == day):
-                lowestFaresAv.append(row)
+                lowestFaresAv.append(row[0:6])
     
     
     return render_template(
