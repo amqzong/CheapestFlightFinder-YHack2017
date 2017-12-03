@@ -59,8 +59,8 @@ def submitted_form():
             if (row[0] == departure and row[1] == destination and flightYear == year
                 and flightMonth == month and flightDay == day):
                 lowestFaresAv.append(row[0:6])
-    
-    
+
+
     return render_template(
     'submitted_form.html',
     university=university,

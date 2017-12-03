@@ -1,5 +1,6 @@
 body {
-  background-color: aliceblue;
+  background-image: url("/images/airplane.jpg");
+  background-size:100%
 }
 
 h1 {
@@ -20,6 +21,7 @@ table{
   width: 70%;
   border-spacing: 20px;
   border-collapse: separate;
+  background-color:white;
 }
 
 th{
