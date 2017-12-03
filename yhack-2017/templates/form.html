@@ -6,27 +6,43 @@
   <body>
     <div id="container">
       <div class="pagetitle">
-        <h1>Submit a form</h1>
+        <h1><i>FAIRWELL</i></h1>
       </div>
       <div id="main">
 
         <form method="post" action="{{ url_for('submitted_form') }}">
           <table>
             <tr>
-              <th><label for="university">University:</label></th>
-              <th><label for="departure">Departure:</label></th>
-              <th><label for="destination">Destination:</label></th>
-              <th><label for="year">Year:</label></th>
-              <th><label for="month">Month:</label></th>
-              <th><label for="day">Day:</label></th>
+              <th><label class="black" for="university">University</label></th>
             </tr>
             <tr>
-              <th><input type="text" name="university"><br /></th>
-              <th><input type="text" name="departure"><br /></th>
-              <th><input type="text" name="destination"><br /></th>
-              <th><input type="text" name="year"><br /></th>
-              <th><input type="text" name="month"><br /></th>
-              <th><input type="text" name="day"></th>
+              <th><input class="answer" type="text" name="university"><br /></th>
+            </tr>
+            <tr>
+              <th><label class="black" for="departure">Departure</label></th>
+            </tr>
+            <tr>
+              <th><input class="answer" type="text" name="departure"><br /></th>
+            </tr>
+            <tr>
+              <th><label class="black" for="destination">Destination</label></th>
+            </tr>
+            <tr>
+              <th><input class="answer" type="text" name="destination"><br /></th>
+            </tr>
+            </table>
+
+            <table>
+              <tr>
+              <th class="aligncenter"><label class="white" for="year">Year</label></th>
+              <th class="aligncenter"><label class="white" for="month">Month</label></th>
+              <th class="aligncenter"><label class="white" for="day">Day</label></th>
+            </tr>
+
+            <tr>
+              <td class="aligncenter"><input class= "answer2" type="text" name="year"><br /></td>
+              <td class="aligncenter"><input class= "answer2" type="text" name="month"><br /></td>
+              <td class="aligncenter"><input class= "answer2" type="text" name="day"></td>
             </tr>
           </table>
             <div class="buttonHolder">
@@ -35,5 +51,37 @@
         </form>
       </div>
     </div>
+    <div class="snowflakes" aria-hidden="true">
+  <div class="snowflake">
+  ❄
+  </div>
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+  ❄
+  </div>
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+  ❄
+  </div>
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+  ❄
+  </div>
+</div>
   </body>
 </html>
