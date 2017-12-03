@@ -4,6 +4,7 @@ body {
 }
 
 h1 {
+  font-family: Impact;
   text-align: center;
   font-size:80px;
  }
@@ -43,13 +44,16 @@ label{
 }
 
 .black{
+  font-family: Futura;
+  font-style: normal;
   color: black;
   text-align: center;
-
 }
 
 .white{
   color: white;
+  font-family: Futura;
+  font-style: normal;
   text-shadow: -2px 0 black, -2px 0 black, -2px 0 black;
   text-align: center;
 
