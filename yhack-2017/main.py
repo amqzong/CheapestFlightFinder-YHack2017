@@ -62,6 +62,7 @@ def submitted_form():
     with open('LowestFares.csv') as csvLowestFares:
         lowestFares = csv.reader(csvLowestFares, delimiter=',')
         lowestFaresAv = []
+        array1 = []
         array2 = []
         for row in lowestFares:
             flightDate = row[2]
@@ -82,17 +83,18 @@ def submitted_form():
             if ((row[0] == departure or row[0]==departure2)
             and row[1] == destination and flightYear == year
                 and flightMonth == month and (int(flightDay) <= int(day)+3 and int(flightDay) >= int(day)-3)):
-                lowestFaresAv.append(row[0:6])
+                array1.append(row[0:6])
 
-        lowestFaresAv = sorted(lowestFaresAv, key= itemgetter(5))
-        # for row in lowestFaresAv:
-        #     price = float(row[5])
-        #     array2.append(price)
-        #
-        # index = sorted(range(len(array2)), key=lambda k: array2[k])
-        #
-        # lowestFaresAv = sorted(range(len(lowestFaresAv)), key = lambda k: index)
-        #
+        # lowestFaresAv = sorted(lowestFaresAv, key= itemgetter(5))
+        for row in array1:
+            price = float(row[5])
+            array2.append(price)
+
+        index = sorted(range(len(array2)), key=lambda k: array2[k])
+        for i in range(0, len(index)):
+            price = array1[index[i]]
+            lowestFaresAv.append(price)
+
 
     return render_template(
     'submitted_form.html',
