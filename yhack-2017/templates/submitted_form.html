@@ -7,6 +7,7 @@
    </style>
    <title>Submitted form</title>
    <link rel="stylesheet" type="text/css" href="/static/style_submitted.css">
+   <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
  </head>
  <body>
    <div id="container">
@@ -14,17 +15,14 @@
        <h1><i>Flights For You</i></h1>
      </div>
      <div id="main">
-       <p class="aligncenter" style="font-size:50px">Thanks for your submission!</p>
-       <p class="aligncenter">Here's a review of the information that you sent:</p>
-       <p class="aligncenter">
+       <p class="review" class="aligncenter">Here's a review of the information that you sent:</p>
+       <p class="info" class="aligncenter">
           <strong>University</strong>: {{university}} <br>
           <strong>Departure</strong>: {{departure}} <br>
           <strong>Destination</strong>: {{destination}} <br>
-          <strong>Year</strong>: {{year}} <br>
-          <strong>Month</strong>: {{month}} <br>
-          <strong>Day</strong>: {{day}}
+          <strong>{{month}}/{{day}}/{{year}}</strong> <br>
        </p>
-          <p class="aligncenter" style="font-size:30px"><strong>Deals Available</strong></p>
+          <p class="headers" class="aligncenter" style="font-size:30px"><strong>Deals Available</strong> <i class="em em-airplane"></i></p>
       <table>
         <tr>
           <th>Flight Number</th>
@@ -47,7 +45,7 @@
      </table>
 
      <br>
-  <p class="aligncenter" style="font-size:30px"><strong>Lowest Fares Available</strong></p>
+  <p class="headers" class="aligncenter" style="font-size:30px"><strong>Lowest Fares Available</strong> <i class="em em-airplane_arriving"></i></p>
     <table>
         <tr>
           <th>Departure</th>
