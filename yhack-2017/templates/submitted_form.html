@@ -1,8 +1,8 @@
 <html>
  <head>
    <style>
-   table, th, td {
-     border: 1px solid black;
+   th, td {
+     border-bottom: 1px solid #ddd;
    }
    </style>
    <title>Submitted form</title>
@@ -22,11 +22,9 @@
           <strong>Destination</strong>: {{destination}} <br>
           <strong>Year</strong>: {{year}} <br>
           <strong>Month</strong>: {{month}} <br>
-          <strong>Day</strong>: {{day}} <br>
-          <strong>Deals Available</strong>: {{dealsAv}} <br>
-          <strong>Lowest Fares Available</strong>: {{lowestFaresAv}}
+          <strong>Day</strong>: {{day}}
        </p>
-
+          <p><strong>Deals Available</strong>:</p>
       <table>
         <tr>
           <th>Flight Number</th>
@@ -49,7 +47,7 @@
      </table>
 
      <br>
-
+  <p><strong>Lowest Fares Available</strong>:</p>
     <table>
         <tr>
           <th>Departure</th>

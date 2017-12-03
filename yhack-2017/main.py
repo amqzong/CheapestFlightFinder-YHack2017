@@ -15,6 +15,7 @@
 # limitations under the License.
 #
 from flask import Flask, render_template, request
+from operator import itemgetter, attrgetter
 app = Flask(__name__)
 
 import csv
@@ -42,24 +43,56 @@ def submitted_form():
             flightMonth = flightDate[5:7]
             flightDay = flightDate[8:10]
 
-
-            if (row[1] == departure and row[2] == destination and flightYear == year
-                and flightMonth == month and flightDay == day):
+            if university == 'Yale':
+                departure = 'BDL'
+                departure2 = 'JFK'
+            elif university == 'Brown':
+                departure = 'PVD'
+                departure2 = 'BOS'
+            elif university == 'Columbia':
+                departure = 'LGA'
+                departure2 = 'JFK'
+            if ((row[1] == departure or row[1] == departure2)
+            and row[2] == destination and flightYear == year
+                and flightMonth == month and (int(flightDay) <= int(day)+3 and int(flightDay) >= int(day)-3)):
                 dealsAv.append(row[0:7])
+        dealsAv = sorted(dealsAv, key= itemgetter(6))
+        # dealsAv = dealsAv.sort(key = lambda row: row[6])
 
     with open('LowestFares.csv') as csvLowestFares:
         lowestFares = csv.reader(csvLowestFares, delimiter=',')
         lowestFaresAv = []
+        array2 = []
         for row in lowestFares:
             flightDate = row[2]
             flightYear = flightDate[6:10]
             flightMonth = flightDate[0:2]
             flightDay = flightDate[3:5]
 
-            if (row[0] == departure and row[1] == destination and flightYear == year
-                and flightMonth == month and flightDay == day):
+            if university == 'Yale':
+                departure = 'BDL'
+                departure2 = 'JFK'
+            elif university == 'Brown':
+                departure = 'PVD'
+                departure2 = 'BOS'
+            elif university == 'Columbia':
+                depature = 'LGA'
+                departure2 = 'JFK'
+
+            if ((row[0] == departure or row[0]==departure2)
+            and row[1] == destination and flightYear == year
+                and flightMonth == month and (int(flightDay) <= int(day)+3 and int(flightDay) >= int(day)-3)):
                 lowestFaresAv.append(row[0:6])
 
+        lowestFaresAv = sorted(lowestFaresAv, key= itemgetter(5))
+        # for row in lowestFaresAv:
+        #     price = float(row[5])
+        #     array2.append(price)
+        #
+        # index = sorted(range(len(array2)), key=lambda k: array2[k])
+        #
+        # lowestFaresAv = sorted(range(len(lowestFaresAv)), key = lambda k: index)
+        #
 
     return render_template(
     'submitted_form.html',
