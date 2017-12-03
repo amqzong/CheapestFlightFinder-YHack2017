@@ -20,7 +20,7 @@ app = Flask(__name__)
 
 import csv
 
-@app.route('/')
+@app.route('/form')
 def form():
     return render_template('form.html')
 
