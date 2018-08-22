@@ -10,3 +10,11 @@ Users input information about their flight including university, destination, an
 # Future Work
 We hope to implement the Google Maps API to automatically detect the closest airports for college students and expand our service to all college students in the US.
 
+# Team Members
+Amanda Zong
+
+Maggie Wu 
+
+Ji Yeon Kwon
+
+Christopher Avalos
