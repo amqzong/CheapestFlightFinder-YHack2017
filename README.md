@@ -14,6 +14,7 @@ Initialize a local virtual environment, then run main.py.
 # Main Files
 
 Name: main.py
+
 Description: Allows users to input information on their university or departing location, destination, and which day
 they are planning to leave. If the university is inputted, it finds the closest airports to that university.
 The webapp employs flexible flight planning by looking at the best flights/deals during the week of the input date and 
