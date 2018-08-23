@@ -1,19 +1,9 @@
-#!/usr/bin/env python
-#
-# Copyright 2007 Google Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
+# main.py
+# Description: Allows users to input information on their university or departing location, destination, and which day
+# they are planning to leave. If the university is inputted, it finds the closest airports to that university.
+# The webapp employs flexible flight planning by looking at the best flights/deals during the week of the input date and 
+# outputting the available flights sorted by most money saved.
+
 from flask import Flask, render_template, request
 from operator import itemgetter, attrgetter
 app = Flask(__name__)
@@ -33,7 +23,6 @@ def submitted_form():
     month = request.form['month']
     day = request.form['day']
 
-
     with open('Deals.csv') as csvDeals:
         deals = csv.reader(csvDeals, delimiter=',')
         dealsAv = []
@@ -43,6 +32,8 @@ def submitted_form():
             flightMonth = flightDate[5:7]
             flightDay = flightDate[8:10]
 
+            # currently hardcodes airports closest to each university, could be improved by automatically
+            # detecting nearest airports through Google Maps API
             if university == 'Yale':
                 departure = 'BDL'
                 departure2 = 'JFK'
@@ -57,7 +48,6 @@ def submitted_form():
                 and flightMonth == month and (int(flightDay) <= int(day)+3 and int(flightDay) >= int(day)-3)):
                 dealsAv.append(row[0:7])
         dealsAv = sorted(dealsAv, key= itemgetter(6))
-        # dealsAv = dealsAv.sort(key = lambda row: row[6])
 
     with open('LowestFares.csv') as csvLowestFares:
         lowestFares = csv.reader(csvLowestFares, delimiter=',')
@@ -70,6 +60,8 @@ def submitted_form():
             flightMonth = flightDate[0:2]
             flightDay = flightDate[3:5]
 
+            # currently hardcodes airports closest to each university, could be improved by automatically
+            # detecting nearest airports through Google Maps API
             if university == 'Yale':
                 departure = 'BDL'
                 departure2 = 'JFK'
@@ -85,7 +77,6 @@ def submitted_form():
                 and flightMonth == month and (int(flightDay) <= int(day)+3 and int(flightDay) >= int(day)-3)):
                 array1.append(row[0:6])
 
-        # lowestFaresAv = sorted(lowestFaresAv, key= itemgetter(5))
         for row in array1:
             price = float(row[5])
             array2.append(price)
