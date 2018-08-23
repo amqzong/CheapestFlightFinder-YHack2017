@@ -97,3 +97,6 @@ def submitted_form():
     day=day,
     dealsAv=dealsAv,
     lowestFaresAv=lowestFaresAv)
+
+if __name__ == '__main__':
+    app.run()
