@@ -9,7 +9,7 @@ Users input information about their flight including university, destination, an
 
 # To Run
 
-Initialize a local virtual environment, then run main.py. Open localhost:[port number]/form.
+Initialize a local virtual environment, then run "python main.py." Open localhost:[port number]/form.
 
 # Main Files
 
