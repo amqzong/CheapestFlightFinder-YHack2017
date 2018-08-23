@@ -7,6 +7,18 @@ As busy, broke, and inexperienced college students, we often don't have time or 
 # Description
 Users input information about their flight including university, destination, and date of departure. Our server then accesses this information and finds available flights that match the user's preferences. It then displays paths departing from the two airports nearest to the user.
 
+# To Run
+
+Initialize a local virtual environment, then run main.py.
+
+# Main Files
+
+Name: main.py
+Description: Allows users to input information on their university or departing location, destination, and which day
+they are planning to leave. If the university is inputted, it finds the closest airports to that university.
+The webapp employs flexible flight planning by looking at the best flights/deals during the week of the input date and 
+outputting the available flights sorted by most money saved.
+
 # Future Work
 We hope to implement the Google Maps API to automatically detect the closest airports for college students and expand our service to all college students in the US.
 
