@@ -13,18 +13,18 @@ Initialize a local virtual environment, then run "python main.py." Open localhos
 
 # Main Files
 
-Name: main.py
+# Name: main.py #
 
 Description: Allows users to input information on their university or departing location, destination, and which day
 they are planning to leave. If the university is inputted, it finds the closest airports to that university.
 The webapp employs flexible flight planning by looking at the best flights/deals during the week of the input date and 
 outputting the available flights sorted by most money saved.
 
-Name: form.html
+# Name: form.html #
 
 Description: Html layout for /form page (which allows users to input flight preferences), links to style sheet /static/style.css.
 
-Name: submitted_form.html
+# Name: submitted_form.html #
 
 Description: Html layout for /submitted page (displaying flight results), links to style sheet /static/style_submitted.css.
 
