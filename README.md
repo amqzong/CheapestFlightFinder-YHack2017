@@ -1,4 +1,4 @@
-# FairWell
+# FairWell: Cheapest Flight Finder For College Students
 This webapp optimizes the cost efficiency of travel for students, allowing them to find the best deals in JetBlue flights with just one click.
 
 # Motivation
