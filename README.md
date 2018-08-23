@@ -20,11 +20,11 @@ they are planning to leave. If the university is inputted, it finds the closest 
 The webapp employs flexible flight planning by looking at the best flights/deals during the week of the input date and 
 outputting the available flights sorted by most money saved.
 
-# Name: form.html #
+# Name: templates/form.html #
 
 Description: Html layout for /form page (which allows users to input flight preferences), links to style sheet /static/style.css.
 
-# Name: submitted_form.html #
+# Name: templates/submitted_form.html #
 
 Description: Html layout for /submitted page (displaying flight results), links to style sheet /static/style_submitted.css.
 
